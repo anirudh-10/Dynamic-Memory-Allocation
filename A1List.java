@@ -25,12 +25,6 @@ public class A1List extends List {
 
         A1List node=new A1List(address,size,key);
         A1List head=this;
-        /*reach headsentienl
-        while(head.prev!=null)
-        {
-            head=head.prev;
-        }
-        */
         A1List temp=head.next;
         temp.prev=node;
         head.next=node;
@@ -42,6 +36,11 @@ public class A1List extends List {
 
     public boolean Delete(Dictionary d) 
     {
+        //corner case 
+        if(d==null)
+        {
+            return false;
+        }
         //sentinel nodes should not be deleted
         if(d.size==-1&&d.key==-1&&d.address==-1)
         {

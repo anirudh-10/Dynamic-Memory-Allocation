@@ -49,8 +49,6 @@ public class BSTree extends Tree {
         }
 
         temp=temp.right;
-        //System.out.println(address + " haha " + size + " haha " + key);
-        //printtree(temp);
         while(true)
         {
             if(temp.key>node.key)
@@ -105,7 +103,6 @@ public class BSTree extends Tree {
     }
     private boolean del(BSTree root,Dictionary e)
     {
-        //System.out.println(e.address + " main "+e.size + " main "+e.key);
         while(true)
         {
             if(root==null)
@@ -145,7 +142,6 @@ public class BSTree extends Tree {
                     
                     if(root.parent.left==root)
                     {
-                    //  System.out.println("herehereherehere");
                         root.parent.left=root.left;
                         root.left.parent=root.parent;
                     }
@@ -196,58 +192,7 @@ public class BSTree extends Tree {
                     root.parent=null;
                     root.left=null;
                     root.right=null;
-                    boolean temporary=del(copy_of_next_min.right,next_min);
-                    /*
-                    if(root.right==next_min)
-                    {
-                        if(root.parent.left==root)
-                        {
-                            root.parent.left=next_min;
-                        }
-                        else
-                        {
-                            root.parent.right=next_min;
-                        }
-                        root.left.parent=next_min;
-                        next_min.left=root.left;
-                        next_min.parent=root.parent;
-                        root.parent=null;
-                        root.left=null;
-                        root.right=null;
-
-                    }
-                    else
-                    {
-                        if(next_min.right!=null)
-                        {
-                            if(next_min.parent==null)
-                            {
-                                System.out.println("no way");
-                            }
-                            next_min.parent.left=next_min.right;
-                            next_min.right.parent=next_min.parent;
-                        }
-                        else
-                        {
-                            next_min.parent.left=null;
-                        }
-                        
-                        if(root.parent.right==root)
-                        {
-                            root.parent.right=next_min;
-                        }   
-                        else
-                        {
-                            root.parent.left=next_min;
-                        }
-                        next_min.parent=root.parent;
-                        next_min.right=root.right;
-                        next_min.left=root.left; 
-                        root.parent=null;
-                        root.left=null;
-                        root.right=null;    
-                    }
-                    */      
+                    boolean temporary=del(copy_of_next_min.right,next_min);      
                 }
                 return true;
             }
@@ -272,17 +217,10 @@ public class BSTree extends Tree {
             return false;
         }
         temp=temp.right;
-        //printtree(temp);
-        //System.out.println("treecomp");
         boolean possible=del(temp,e);
-        //e.size=size_temp;
-        //e.address=address_temp;
-        //e.key=key_temp;
         
         if(possible==true)
         {
-        //      printtree(head.right);
-        //System.out.println("treecomp");
             return true;
         }
         return false;
@@ -300,13 +238,6 @@ public class BSTree extends Tree {
             return null;
         }
         temp=temp.right;
-        /*
-        if(exact==true)
-        {
-            printtree(temp);
-        }
-        */
-        
         
         if(exact==true)
         {
@@ -326,12 +257,10 @@ public class BSTree extends Tree {
                 }
                 else
                 {
-                    //System.out.println(key+ " findb "+  temp.key );
                     while(temp.left!=null&&temp.left.key==temp.key)
                     {
                         temp=temp.left;
                     }
-                    //System.out.println(key+ " finda "+  temp.key );
                     return temp;
                 }
             }
