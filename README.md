@@ -1,5 +1,7 @@
 A1 refers to Doubly Linked List(DLL)
+
 A2 refers to Binary Search Tree(BSTree)
+
 A3 refers to AVLTree
 
 ## Using makefile
